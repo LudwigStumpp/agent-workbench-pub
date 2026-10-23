@@ -1,8 +1,14 @@
 {
 	"folders": [
 		{
+			"name": "Workbench",
 			"path": ".."
 		},
+		// Add one entry per mounted folder: repository, Obsidian vault, etc.
+		// {
+		// 	"name": "My folder",
+		// 	"path": "../repos/<...>"
+		// },
 	],
 	"settings": {}
 }

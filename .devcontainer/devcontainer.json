@@ -14,9 +14,8 @@
 	"workspaceFolder": "/workspaces/agent-workbench",
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/agent-workbench,type=bind,consistency=cached",
 	// "mounts": [
-	// 	"source=${localEnv:HOME}/repos/<SOME_REPO>,target=/<SOME_REPO>,type=bind",
+	// 	"source=${localEnv:HOME}/repos/<SOME_REPO>,target=/workspaces/agent-workbench/repos/<SOME_REPO>,type=bind"
 	// ],
-	"postCreateCommand": "bash .devcontainer/postCreate.sh",
 	"customizations": {
 		"vscode": {
 			"extensions": [

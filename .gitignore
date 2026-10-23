@@ -372,6 +372,7 @@ apm_modules/
 /.kube/
 
 # Private workspace mounts or symlinks
+/repos/
 /obsidian-vaults
 /agent-skills
 
