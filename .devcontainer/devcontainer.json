@@ -1,0 +1,27 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+// OWASP Docker Security Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html
+{
+	"name": "Ubuntu Custom",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": ".."
+	},
+	"runArgs": [
+		"--cap-drop=ALL", // Drop Linux kernel capabilities, see https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html#rule-3-limit-capabilities-grant-only-specific-capabilities-needed-by-a-container
+		"--security-opt=no-new-privileges" // Prevent in-container privilege escalation via setuid or setgid binaries, also can't run sudo, see https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html#rule-4-prevent-in-container-privilege-escalation
+	],
+	"workspaceFolder": "/workspaces/agent-workbench",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/agent-workbench,type=bind,consistency=cached",
+	// "mounts": [
+	// 	"source=${localEnv:HOME}/repos/<SOME_REPO>,target=/<SOME_REPO>,type=bind",
+	// ],
+	"postCreateCommand": "bash .devcontainer/postCreate.sh",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"openai.chatgpt"
+			]
+		}
+	}
+}

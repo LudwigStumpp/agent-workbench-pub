@@ -1,0 +1,4 @@
+{
+    // Disable built-in Copilot chat, inline completions, and next edit suggestions for this workspace.
+    "chat.disableAIFeatures": true
+}
